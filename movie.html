@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Rock+Salt|Shadows+Into+Light&display=swap"
+    />
+    <title>Search Any Movie</title>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <ul>
+        <li id="back-to-btn">
+          <a href="index.html" class="back-to-btn-modified">Back To Main</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="search-form">
+        <h4>Search for any movies</h4>
+        <form id="searchForm">
+          <input
+            type="text"
+            id="searchText"
+            autocomplete="off"
+            placeholder="Type Keyword and Hit the Enter Key"
+          />
+        </form>
+      </div>
+    </div>
+    <br /><br />
+
+    <div class="container">
+      <div id="movies" class="row border"></div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/movieAPI.js"></script>
+  </body>
+</html>
