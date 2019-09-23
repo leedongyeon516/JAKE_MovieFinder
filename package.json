@@ -1,0 +1,11 @@
+{
+  "name": "moviefinder_dylee",
+  "version": "1.0.0",
+  "description": "It searches for any movies based on a keyword you type.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dongyeon Lee",
+  "license": "ISC"
+}

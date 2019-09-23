@@ -1,0 +1,542 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f4f4 !important;
+}
+
+ul {
+  padding: 0;
+}
+
+ul,
+.ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+  padding-bottom: 3px;
+}
+
+.li {
+  letter-spacing: 1rem;
+  display: inline;
+  cursor: pointer;
+  z-index: 999;
+}
+
+a,
+a:hover {
+  color: orange !important;
+  text-decoration: none !important;
+}
+
+h6 {
+  font-size: 1.4rem !important;
+  color: black !important;
+  padding-bottom: 0.5rem !important;
+}
+
+input {
+  color: white !important;
+  background: black;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  margin-bottom: 70px;
+}
+
+input[type="text"]:focus {
+  border: none;
+}
+
+::-webkit-input-placeholder {
+  color: darkorange;
+}
+
+:-ms-input-placeholder {
+  color: darkorange;
+}
+
+::placeholder {
+  letter-spacing: 0.5rem;
+  color: darkorange;
+}
+
+/* Navigation Bar Animation */
+#home::before,
+#go-to-btn::before,
+#search::before,
+#back-to-btn::before {
+  content: "";
+  background: #333;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+
+#home:hover::before,
+#go-to-btn:hover::before,
+#search:hover::before,
+#back-to-btn:hover::before {
+  height: 25px;
+}
+
+/* Buttons */
+.detail-btn {
+  font-family: "Rock Salt", cursive;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: orange;
+  padding: 0rem 1rem;
+  border: solid 1px orange;
+  border-radius: 3px;
+  transition: all 0.5s ease-in-out;
+}
+
+.detail-btn:hover {
+  text-decoration: none !important;
+  color: white !important;
+  background: orange;
+}
+
+.back-to-search {
+  margin-left: 30px;
+}
+
+/* Index.html */
+.section-1 {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-bar {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.7rem;
+  color: orange;
+  background: none;
+  letter-spacing: 0.65rem;
+  margin-right: -0.65rem;
+  top: 25px;
+  left: 40px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bolder;
+  z-index: 1;
+}
+
+.title {
+  font-weight: bold;
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: -1;
+}
+
+.title h1 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2rem;
+  margin-right: -1.2rem;
+}
+
+.outlined {
+  color: transparent;
+  -webkit-text-stroke: 1.5px black;
+}
+
+.outlined-white {
+  -webkit-text-stroke: 1px white;
+}
+
+.description {
+  position: fixed;
+  bottom: 0;
+  height: 250px;
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.description p {
+  font-family: "Rock Salt", cursive;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 0.2rem;
+  line-height: 3rem;
+  color: orange;
+  width: 90%;
+  margin-bottom: 50px;
+  align-self: flex-end;
+}
+
+#movies img,
+#movie img {
+  width: 100%;
+  height: 100%;
+}
+
+.background-top {
+  position: absolute;
+  top: 52vh;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-top img {
+  width: 100%;
+  background-repeat: repeat;
+  filter: grayscale(100);
+}
+
+.background-bottom {
+  bottom: 90px;
+  right: 100px;
+  width: 50%;
+  height: 100%;
+  z-index: -2;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.poster-1,
+.poster-2,
+.poster-3,
+.poster-4,
+.poster-5,
+.poster-6,
+.poster-7,
+.poster-8,
+.poster-9,
+.poster-10 {
+  width: 100%;
+  height: 100vh;
+  transform: scale(0.85);
+}
+
+.movie-info img {
+  cursor: pointer;
+}
+
+/* Movie Slider */
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.slider-inner {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 65vh;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  display: flex;
+}
+
+.slider-inner.active {
+  opacity: 1;
+}
+
+/* movie.html movieInfo.html */
+.border,
+.well {
+  border: none;
+  border-radius: 0px !important;
+}
+
+.well {
+  background-color: #f4f4f4 !important;
+}
+
+.well img {
+  cursor: pointer;
+}
+
+.well h6 {
+  margin-bottom: 0 !important;
+  padding-bottom: 2px !important;
+}
+
+.search-form {
+  padding-top: 100px;
+}
+
+.search-form h4 {
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.85rem;
+  color: black;
+}
+
+.rate {
+  color: #444;
+}
+
+.rate-modified {
+  font-size: 1rem;
+  letter-spacing: 0.45rem;
+  margin-right: -0.45rem;
+  line-height: 30px;
+}
+
+.body-black {
+  background: black !important;
+}
+
+.movie-detail-list {
+  color: darksalmon;
+}
+
+.movie-detail,
+.plot p {
+  font-family: "Josefin Slab", serif;
+  font-size: 2rem;
+  letter-spacing: 0 !important;
+}
+
+.movie-detail-plot {
+  margin-bottom: 100px;
+}
+
+.plot p {
+  padding: 30px;
+}
+
+.error h3 {
+  font-family: "Josefin Slab", serif;
+  text-align: center;
+}
+
+/* Media Query 1 */
+@media only screen and (max-width: 1175px) {
+  .title {
+    font-size: 60px;
+  }
+
+  .description p {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 887px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .description p {
+    width: 90%;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 762px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .description p {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .background-top img {
+    height: 100%;
+    width: 130%;
+    margin-left: -15%;
+  }
+
+  nav {
+    flex-direction: column;
+    font-size: 13px;
+  }
+}
+
+/* Media Query 2 */
+@media (min-width: 960px) {
+  #movies .col-md-3 .well {
+    height: 390px;
+  }
+
+  #movies .col-md-3 img {
+    height: 240px;
+  }
+}
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 480px) {
+  .nav-bar {
+    left: 35px;
+  }
+
+  .title h1 {
+    font-size: 5rem;
+    padding-bottom: 100px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+  }
+
+  .description p {
+    font-size: 1rem;
+    padding-left: 15px;
+  }
+
+  .background-bottom {
+    right: 200px;
+    transform: scale(0.6);
+  }
+
+  .slider-inner {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .poster-1,
+  .poster-2,
+  .poster-3,
+  .poster-4,
+  .poster-5,
+  .poster-6,
+  .poster-7,
+  .poster-8,
+  .poster-9,
+  .poster-10 {
+    transform: scale(1);
+  }
+
+  .search-form h4 {
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    margin-right: 0;
+  }
+
+  .movie-detail {
+    padding-left: 1px;
+  }
+
+  .movie-detail-plot {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 850px) {
+  .nav-bar {
+    left: 35px;
+  }
+
+  .title h1 {
+    font-size: 4rem;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+  }
+
+  .description p {
+    font-size: 1rem;
+    padding-left: 15px;
+  }
+
+  .background-bottom {
+    bottom: 150px;
+    right: 200px;
+  }
+
+  .poster-1,
+  .poster-2,
+  .poster-3,
+  .poster-4,
+  .poster-5,
+  .poster-6,
+  .poster-7,
+  .poster-8,
+  .poster-9,
+  .poster-10 {
+    transform: scale(1);
+  }
+}
+
+/* Media Query for iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .title h1 {
+    font-size: 6rem;
+  }
+
+  .background-bottom {
+    bottom: 0px;
+  }
+}
+
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+  .title h1 {
+    font-size: 7rem;
+    margin-top: -20px;
+  }
+}
+
+@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait) {
+  .title h1 {
+    font-size: 8rem;
+  }
+
+  .background-bottom {
+    bottom: -150px;
+  }
+
+  .poster-1,
+  .poster-2,
+  .poster-3,
+  .poster-4,
+  .poster-5,
+  .poster-6,
+  .poster-7,
+  .poster-8,
+  .poster-9,
+  .poster-10 {
+    transform: scale(1);
+  }
+}
+
+@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape) {
+  .title h1 {
+    margin-top: -20px;
+  }
+}
+
+@media only screen and (min-height: 1400px) {
+  .background-bottom img {
+    display: none;
+  }
+}

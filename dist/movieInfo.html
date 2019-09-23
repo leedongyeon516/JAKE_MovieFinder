@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Josefin+Slab|Rock+Salt|Shadows+Into+Light&display=swap"
+    />
+    <title>Movie Details</title>
+  </head>
+  <body class="body-black">
+    <nav class="nav-bar">
+      <ul>
+        <li id="back-to-btn">
+          <a href="index.html">Back To Main</a>
+        </li>
+        <li id="search" class="li">
+          <a href="movie.html">Go To Search</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div id="movie" class="movie-detail"></div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/movieAPI.js"></script>
+    <script type="text/javascript">
+      getMovie();
+    </script>
+  </body>
+</html>
