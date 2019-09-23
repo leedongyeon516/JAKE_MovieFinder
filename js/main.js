@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .to(".background-bottom", 2, { y: -600, ease: Expo.easeInOut }, "-=2")
       .to(".go-to-btn", 2, { width: "0%", ease: Expo.easeInOut }, "-=2")
       .to("nav", 2, { color: "#fff" }, "-=2")
-      .to(".slider", 1, { autoAlpha: 1, ease: Expo.easeInOut }, "-=1");
+      .to(".slider", 1, { autoAlpha: 1, ease: Expo.easeInOut }, "-=1")
+      .to(".description", 1, { autoAlpha: 0, ease: Expo.easeInOut }, "-=1");
 
     home.addEventListener("click", () => {
       timeLine2.reverse();
