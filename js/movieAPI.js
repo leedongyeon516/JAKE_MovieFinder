@@ -42,7 +42,7 @@ function getMovies(searchText) {
         }
 
         output += `
-            <div class="col-md-3">
+            <div class="col-md-3 col-md-3-modified">
               <div class="well text-center">
                 <img onclick="movieSelected('${movies[i].id}')" src="https://image.tmdb.org/t/p/w500${movies[i].poster_path}" onerror="this.src='images/No_Image.jpeg';">
                 <h6>${movies[i].title}<br><span class="rate-modified">${stars}</span></h6>
@@ -84,7 +84,7 @@ function getMovie() {
     .then(function(response) {
       let movie = response.data;
       let output = `
-          <br><br><br><br><div class="row">
+          <br><br><br><br><div class="row row-modified">
             <div class="col-md-4">
               <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" onerror="this.src='images/No_Image.jpeg';">
             </div>
