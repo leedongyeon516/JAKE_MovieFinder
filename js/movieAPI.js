@@ -6,6 +6,14 @@ $(document).ready(() => {
 
     getMovies(searchText);
   });
+
+  $(".search-form-btn").on("click", e => {
+    e.preventDefault();
+
+    let searchText = $("#searchText").val();
+
+    getMovies(searchText);
+  });
 });
 
 function getMovies(searchText) {

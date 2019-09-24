@@ -98,7 +98,8 @@ input[type="text"]:focus {
 }
 
 /* Buttons */
-.detail-btn {
+.detail-btn,
+.search-form-btn {
   font-family: "Rock Salt", cursive;
   font-size: 1rem;
   font-weight: bold;
@@ -114,6 +115,14 @@ input[type="text"]:focus {
   text-decoration: none !important;
   color: white !important;
   background: orange;
+}
+
+.search-form-btn {
+  color: black;
+  border: none;
+  border-radius: 0;
+  padding-top: 11px;
+  cursor: pointer;
 }
 
 .back-to-search {
@@ -303,8 +312,18 @@ input[type="text"]:focus {
 
 .search-form h4 {
   font-family: "Times New Roman", Times, serif;
+  font-size: 1.8rem;
   letter-spacing: 0.7rem;
   color: black;
+}
+
+.search-form-inner {
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.search-form-text {
+  flex: 7;
 }
 
 .rate {
@@ -349,6 +368,7 @@ input[type="text"]:focus {
 .error h3 {
   font-family: "Josefin Slab", serif;
   font-size: 3rem;
+  color: #f4f4f4;
   text-align: center;
 }
 
@@ -439,7 +459,7 @@ footer {
 
   .background-bottom {
     right: 200px;
-    transform: scale(0.6);
+    transform: scale(0.7);
   }
 
   .slider-inner {
@@ -494,7 +514,7 @@ footer {
   .background-bottom {
     bottom: 150px;
     right: 200px;
-    transform: scale(0.45);
+    transform: scale(0.55);
   }
 
   .poster-1,
@@ -537,7 +557,8 @@ footer {
   }
 
   .background-bottom {
-    bottom: 0px;
+    bottom: -50px;
+    right: 150px;
   }
 }
 
@@ -574,6 +595,10 @@ footer {
 @media all and (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape) {
   .title h1 {
     margin-top: -20px;
+  }
+
+  .background-bottom {
+    bottom: -20px;
   }
 }
 
