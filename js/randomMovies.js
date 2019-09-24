@@ -11,14 +11,21 @@ function getTenRandomMovies() {
         result
     )
     .then(function(response) {
-      let tenMovies = response.data.results;
+      let movies = response.data.results;
+      let tenMoviesByRate = [];
       let tenPosters = [];
       let posterClasses = [];
-      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const classNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      for (i = 0; i < movies.length; i++) {
+        tenMoviesByRate = movies.sort(
+          (a, b) => b.vote_average - a.vote_average
+        );
+      }
 
       for (i = 0; i < 10; i++) {
-        tenPosters[i] = tenMovies[i].poster_path;
-        posterClasses[i] = `.poster-${numbers[i]}`;
+        tenPosters[i] = tenMoviesByRate[i].poster_path;
+        posterClasses[i] = `.poster-${classNumbers[i]}`;
 
         if (tenPosters[i] === null) {
           document.querySelector(

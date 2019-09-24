@@ -1,10 +1,14 @@
+const message = document.querySelector(".modal-modified");
+const modal = document.querySelector(".modal-modified");
+const closeBtn = document.querySelector(".close-btn");
+
 $(document).ready(() => {
   $("#searchForm").on("submit", e => {
     e.preventDefault();
 
     let searchText = $("#searchText").val();
 
-    getMovies(searchText);
+    validation(searchText);
   });
 
   $(".search-form-btn").on("click", e => {
@@ -12,8 +16,26 @@ $(document).ready(() => {
 
     let searchText = $("#searchText").val();
 
-    getMovies(searchText);
+    validation(searchText);
   });
+});
+
+function validation(searchText) {
+  if (searchText === "") {
+    message.style.display = "block";
+  } else {
+    getMovies(searchText);
+  }
+}
+
+closeBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", function(e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
 });
 
 function getMovies(searchText) {
@@ -101,7 +123,7 @@ function getMovie() {
               <ul class="movie-detail">
                 <li><span class="movie-detail-list">Genre:</span> ${movie.genres[0].name}, ${movie.genres[1].name}</li>
                 <li><span class="movie-detail-list">Released:</span> ${movie.release_date}</li>
-                <li><span class="movie-detail-list">Rated:</span> ${movie.vote_average}<span class="rate"> / 10<span></li>
+                <li><span class="movie-detail-list">Rated:</span> ${movie.vote_average}<span class="rate"> / 10</span>&nbsp&nbsp<span class="vote-count">*${movie.vote_count} people voted.</span></li>
                 <li><span class="movie-detail-list">Runtime:</span> ${movie.runtime} min.</li>
                 <li><span class="movie-detail-list">Production Companies:</span> ${movie.production_companies[0].name}</li>
               </ul>
