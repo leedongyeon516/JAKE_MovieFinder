@@ -35,6 +35,11 @@ function getTenRandomMovies() {
           document.querySelector(
             `${posterClasses[i]}`
           ).style.background = `url('https://image.tmdb.org/t/p/w500${tenPosters[i]}') no-repeat center center/cover`;
+
+          /*
+          document
+            .querySelector(`${posterClasses[i]}`)
+            .addEventListener("click", movieSelected(`${movies[i].id}`));*/
         }
       }
     });
