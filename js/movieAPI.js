@@ -74,9 +74,17 @@ function getMovies(searchText) {
         output += `
             <div class="col-md-3 col-md-3-modified">
               <div class="well text-center">
-                <img onclick="movieSelected('${movies[i].id}')" src="https://image.tmdb.org/t/p/w500${movies[i].poster_path}" onerror="this.src='images/No_Image.jpeg';">
-                <h6>${movies[i].title}<br><span class="rate-modified">${stars}</span></h6>
-                <a onclick="movieSelected('${movies[i].id}')" class="detail-btn" href="#">Movie Details</a>
+                <img onclick="movieSelected('${
+                  movies[i].id
+                }')" src="https://image.tmdb.org/t/p/w500${
+          movies[i].poster_path
+        }" onerror="this.src='images/No_Image.jpeg';">
+                <h6>${cutTitle(
+                  movies[i].title
+                )}<br><span class="rate-modified">${stars}</span></h6>
+                <a onclick="movieSelected('${
+                  movies[i].id
+                }')" class="detail-btn" href="#">Movie Details</a>
               </div>
             </div>
           `;
@@ -148,4 +156,14 @@ function getMovie() {
 
       $("#movie").html(output);
     });
+}
+
+function cutTitle(title) {
+  if (title.length > 55) {
+    title = title.substring(0, 55) + "..";
+
+    return title;
+  } else {
+    return title;
+  }
 }
