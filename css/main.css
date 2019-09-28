@@ -531,10 +531,6 @@ footer {
     transform: scale(1);
   }
 
-  .search-form {
-    padding-left: 0.4px;
-  }
-
   .search-form h4 {
     font-size: 1.5rem;
     letter-spacing: 0.5rem;
