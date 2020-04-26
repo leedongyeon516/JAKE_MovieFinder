@@ -7,7 +7,7 @@ result += characters.charAt(Math.floor(Math.random() * charactersLength));
 function getTenRandomMovies() {
   axios
     .get(
-      "https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=en-US&query=" +
+      "https://api.themoviedb.org/3/search/movie?api_key=8c29e8c200e75cc2b15618723a2aa349&language=en-US&query=" +
         result
     )
     .then(function(response) {
@@ -26,21 +26,16 @@ function getTenRandomMovies() {
       for (i = 0; i < 10; i++) {
         tenPosters[i] = tenMoviesByRate[i].poster_path;
         posterClasses[i] = `.poster-${classNumbers[i]}`;
+        const selectedMovies = document.querySelector(`${posterClasses[i]}`);
 
         if (tenPosters[i] === null) {
-          document.querySelector(
-            `${posterClasses[i]}`
-          ).style.background = `url('images/No_Image.jpeg') no-repeat center center/cover`;
+          selectedMovies.style.background = `url('images/No_Image.jpeg') no-repeat center center/cover`;
         } else {
-          document.querySelector(
-            `${posterClasses[i]}`
-          ).style.background = `url('https://image.tmdb.org/t/p/w500${tenPosters[i]}') no-repeat center center/cover`;
-
-          /*
-          document
-            .querySelector(`${posterClasses[i]}`)
-            .addEventListener("click", movieSelected(`${movies[i].id}`));*/
+          selectedMovies.style.background = `url('https://image.tmdb.org/t/p/w500${tenPosters[i]}') center center/cover`;
         }
+        selectedMovies.addEventListener("click", () => {
+          console.log(i);
+        });
       }
     });
 }

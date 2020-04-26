@@ -41,7 +41,7 @@ window.addEventListener("click", function(e) {
 function getMovies(searchText) {
   axios
     .get(
-      "https://api.themoviedb.org/3/search/movie?api_key=98325a9d3ed3ec225e41ccc4d360c817&language=en-US&query=" +
+      "https://api.themoviedb.org/3/search/movie?api_key=8c29e8c200e75cc2b15618723a2aa349&language=en-US&query=" +
         searchText
     )
     .then(function(response) {
@@ -117,7 +117,7 @@ function getMovie() {
     .get(
       "https://api.themoviedb.org/3/movie/" +
         movieId +
-        "?api_key=98325a9d3ed3ec225e41ccc4d360c817"
+        "?api_key=8c29e8c200e75cc2b15618723a2aa349"
     )
     .then(function(response) {
       let movie = response.data;
